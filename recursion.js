@@ -41,3 +41,21 @@ function sumRange(num){
 }
 
 console.log(sumRange(6))
+
+// --- another basic recursion
+//none recursive solution  
+const factorial=(num)=>{
+  let total =1; 
+  for( i = num; i>0 ;i--){
+    total *= i
+  }
+  return total
+}
+console.log(factorial(5))
+
+const factorialNum = (num1)=>{
+  if(num1 === 1 )return 1;
+  return num1 * factorialNum(num1 -1)
+}
+
+console.log(factorialNum(3))
