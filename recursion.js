@@ -52,10 +52,41 @@ const factorial=(num)=>{
   return total
 }
 console.log(factorial(5))
-
+//Where things go wrong
+// No base case
+// Forgetting to return or returning the wrong thing!
+// Stack overflow! 
 const factorialNum = (num1)=>{
-  if(num1 === 1 )return 1;
+  if(num1 === 1 )return 1;//  base case 
   return num1 * factorialNum(num1 -1)
 }
 
 console.log(factorialNum(3))
+
+//--- Helper method  sample recursion -two functions -main outer and inside recursion
+const outer = (input)=>{
+  let outerScopedVar = []
+
+  const helper =(helperInput)=>{
+    //modify outerScopeVar
+    helper(helperInput--)
+  }
+  helper(input)
+  return outerScopedVar;
+}
+// an example -- collect odd value recursively 
+const collectOdds =(arr)=>{
+  let result = [];
+    const helper=(helperInput)=>{
+      if( helperInput.length === 0){
+        return;
+      }
+      if(helperInput[0] %2 !== 0 ){
+        result.push(helperInput[0])
+      }
+      helper(helperInput.slice(1)) // removing the first number then loop again 
+    }
+    helper(arr)
+    return result;
+}
+console.log(collectOdds([1,2,3,4,5,6,7,8,9]));
