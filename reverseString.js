@@ -5,6 +5,7 @@ const  reverseStr =(str) =>{
 console.log(reverseStr('hello'))
 // integer reverse
 const reverseInt = (int) =>{
-  return int.toString().split('').reverse().join('')
+  const reversed = int.toString().split('').reverse().join('');
+  return parseInt(reversed )* Math.sign(int)
 }
-console.log(reverseInt(1234))
+console.log(reverseInt(-1234))
