@@ -1,6 +1,6 @@
 // count character in string
 
-//charCodeAt() gives us laphabetical code 
+//charCodeAt() gives us alphabetical code 
 const isAlphaNumeric = (char) => {
   let code = char.charCodeAt(0);
   if (!(code > 47 && code < 58) &&
